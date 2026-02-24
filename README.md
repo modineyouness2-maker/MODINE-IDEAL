@@ -88,5 +88,4 @@ The technical architecture of **MODINE IDEAL** is built to satisfy regulatory re
 *Ambition: Bringing Moroccan cyber-innovation to the global stage and empowering local industries with sovereign security solutions.*
 
 ---
-### GNU GENERAL PUBLIC LICENSE (GPL v3)
-**"This project is licensed under the GPL-3.0 License - see the LICENSE file for details. Non-commercial and educational use only is highly encouraged." **
+![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)
