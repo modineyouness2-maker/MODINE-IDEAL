@@ -1,6 +1,6 @@
 # 🛡️ MODINE IDEAL
 **Comprehensive Threat Intelligence Platform: Detection, Active Response & Industrial Resilience**
-
+ 
 ![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)
 ![Security: Enterprise](https://img.shields.io/badge/Security-Enterprise--Grade-blue.svg)
 ![Compliance: TISAX & IEC 62443](https://img.shields.io/badge/Compliance-TISAX%20%7C%20IEC%2062443-green.svg)
