@@ -5,15 +5,15 @@
 ![Security: Enterprise](https://img.shields.io/badge/Security-Enterprise--Grade-blue.svg)
 ![Compliance: TISAX & IEC 62443](https://img.shields.io/badge/Compliance-TISAX%20%7C%20IEC%2062443-green.svg)
 ![Field: Industry 4.0](https://img.shields.io/badge/Industry-4.0-orange.svg)
+![Cloud: Azure](https://img.shields.io/badge/Cloud-Microsoft%20Azure-blue.svg?logo=microsoft-azure)
 
 ## 🌐 Project Vision
-**MODINE IDEAL** is a next-generation cybersecurity ecosystem designed for **Digital Sovereignty** and **Industrial Continuity**. It moves beyond passive monitoring into an **Active Defense & Resilience model**, integrating high-fidelity detection with automated, standards-compliant mitigation strategies.
+**MODINE IDEAL** is a next-generation cybersecurity ecosystem, **cloud-native and deployed on Microsoft Azure**, designed for **Digital Sovereignty** and **Industrial Continuity**. It moves beyond passive monitoring into an **Active Defense & Resilience model**, integrating high-fidelity detection with automated, standards-compliant mitigation strategies.
 
 > **🎯 The Mission:**
-> Instead of just observing attacks, **MODINE IDEAL** proactively neutralizes them. By mapping technical actions to global frameworks (MITRE ATT&CK & IEC 62443), we ensure that the "Counter-Measure" is precise, automated, and strictly aligned with enterprise safety protocols.
+> Instead of just observing attacks, **MODINE IDEAL** proactively neutralizes them. By leveraging **Azure's scalable infrastructure** and mapping technical actions to global frameworks (MITRE ATT&CK & IEC 62443), we ensure that the "Counter-Measure" is precise, automated, and strictly aligned with enterprise safety protocols.
 
-> In real-world assessments, many environments start with a **Security Configuration Assessment (SCA) score of less than 50% (e.g., 46%)**. 
-> **MODINE IDEAL** bridges this gap, hardening systems to enterprise-grade standards through continuous monitoring and automated mitigation.
+> In real-world assessments, many environments start with a **Security Configuration Assessment (SCA) score of less than 50% (e.g., 46%)**. **MODINE IDEAL** bridges this gap by providing a cloud-hardened environment that elevates systems to enterprise-grade standards through continuous monitoring and automated mitigation.
 
 ---
 
