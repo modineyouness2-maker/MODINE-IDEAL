@@ -1,16 +1,30 @@
+Version 1: English (Primary)
 LICENSE: Creative Commons Attribution-NonCommercial 4.0 International
 Copyright (c) 2026 YOUNESS MODINE
 
-This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+This work is licensed under the CC BY-NC 4.0 License.
 
-Under the following terms:
+Specific Mandatory Terms:
 
-Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+Mandatory Attribution: Any redistribution or use of the configuration files including but not limited to (ossec.conf and local_rules.xml) must retain the original headers and comments identifying YOUNESS MODINE as the creator.
 
-NonCommercial — You may not use the material for commercial purposes. This includes selling the code, using it in a paid corporate environment without consent, or integrating it into commercial security products.
+Identification: The name YOUNESS MODINE https://www.linkedin.com/in/younessmodine must remain visible in every instance of the code where it was originally placed. Removing or altering these credits is a violation of this license.
 
-⚠️ AVIS IMPORTANT / IMPORTANT NOTICE
+Non-Commercial: Use in paid corporate environments or for-profit products is strictly prohibited without written consent.
 
-- L'utilisation commerciale de ce projet ou de ses fichiers de configuration est strictement interdite sans l'autorisation écrite du Créateur du projet (YOUNESS MODINE) https://www.linkedin.com/in/younessmodine)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-- Commercial use of this project or its configuration files is strictly prohibited without written authorization from the Project Creator (YOUNESS MODINE) https://www.linkedin.com/in/younessmodine
+Version 2: Français (Juridique)
+LICENCE : Creative Commons Attribution - Pas d’Utilisation Commerciale 4.0 International
+Copyright (c) 2026 YOUNESS MODINE
+
+Ce travail est protégé par la licence CC BY-NC 4.0.
+
+Conditions Obligatoires Spécifiques :
+
+Attribution Obligatoire : Toute redistribution ou utilisation des fichiers de configuration notamment (ossec.conf et local_rules.xml) doit impérativement conserver les en-têtes originaux mentionnant YOUNESS MODINE comme créateur.
+
+Intégrité de l'Identité : Le nom YOUNESS MODINE https://www.linkedin.com/in/younessmodine doit rester visible dans chaque partie du code où il a été inséré à l'origine. La suppression ou la modification de ces mentions constitue une violation de cette licence.
+
+Usage Non-Commercial : L'utilisation dans un cadre d'entreprise rémunéré ou pour des produits lucratifs est strictement interdite sans autorisation écrite.
