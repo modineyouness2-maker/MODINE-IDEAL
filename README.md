@@ -20,7 +20,7 @@
 ## 🛠️ System Architecture
 MODINE IDEAL is not just a lab tool; it's a **Comprehensive Threat Intelligence Platform**. It analyzes behavioral patterns to neutralize threats in real-time before they escalate.
 
-![MODINE IDEAL Architecture](architecture.png)
+![MODINE IDEAL Architecture]
 
 ### 🧩 Core Mechanisms:
 1. **Behavioral Heuristics (Rules 12-15):** Specialized in detecting **Zero-Day** and **Zero-Click** attacks (Lateral Movement).
