@@ -84,8 +84,8 @@ The technical architecture of **MODINE IDEAL** is built to satisfy regulatory re
 *Student at **Université Ibn Tofaïl (UIT)** - MOROCCO.*
 
 ---
-### 🚀 Road to GITEX Africa 2026
-*Ambition: Bringing Moroccan cyber-innovation to the global stage and empowering local industries with sovereign security solutions.*
-
+### ⚠️ AVIS IMPORTANT / IMPORTANT NOTICE
+** L'utilisation commerciale de ce projet ou de ses fichiers de configuration est strictement interdite sans l'autorisation écrite du Créateur du projet (YOUNESS MODINE).**
+** Commercial use of this project or its configuration files is strictly prohibited without written authorization from the Project Creator (YOUNESS MODINE).**
 ---
 ![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)
