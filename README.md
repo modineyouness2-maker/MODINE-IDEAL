@@ -86,3 +86,7 @@ The technical architecture of **MODINE IDEAL** is built to satisfy regulatory re
 ---
 ### 🚀 Road to GITEX Africa 2026
 *Ambition: Bringing Moroccan cyber-innovation to the global stage and empowering local industries with sovereign security solutions.*
+
+---
+### GNU GENERAL PUBLIC LICENSE (GPL v3)
+**"This project is licensed under the GPL-3.0 License - see the LICENSE file for details. Non-commercial and educational use only is highly encouraged." **
