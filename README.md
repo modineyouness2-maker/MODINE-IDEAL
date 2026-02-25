@@ -6,6 +6,7 @@
 ![Compliance: TISAX & IEC 62443](https://img.shields.io/badge/Compliance-TISAX%20%7C%20IEC%2062443-green.svg)
 ![Field: Industry 4.0](https://img.shields.io/badge/Industry-4.0-orange.svg)
 ![Cloud: Azure](https://img.shields.io/badge/Cloud-Microsoft%20Azure-blue.svg?logo=microsoft-azure)
+![SIEM: Wazuh](https://img.shields.io/badge/SIEM-Wazuh-00a9e5.svg?logo=wazuh&logoColor=white)
 
 ## 🌐 Project Vision
 **MODINE IDEAL** is a next-generation cybersecurity ecosystem, **cloud-native and deployed on Microsoft Azure**, designed for **Digital Sovereignty** and **Industrial Continuity**. It moves beyond passive monitoring into an **Active Defense & Resilience model**, integrating high-fidelity detection with automated, standards-compliant mitigation strategies.
