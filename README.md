@@ -51,6 +51,28 @@ To demonstrate how **MODINE IDEAL** aligns with global standards, we map our tec
 
 ---
 
+## 🧠 The Intelligence: How We Detect the "Undetectable"
+Detecting **Zero-Day** and **Zero-Click** attacks requires moving beyond signatures into **Deep Behavioral Intelligence**. Here is the logic embedded in MODINE IDEAL:
+
+### 1. The "Zero-Click" Detection Logic (East-West Movement)
+* **The Challenge:** Zero-Click attacks (like those targeting SMB or RPC) execute without any user interaction. They don't leave a "click" trail.
+* **Our Mechanism:** We monitor **Lateral Movement Patterns**. In a Zero-Click scenario, the attacker moves from one machine to another using legitimate system service accounts. 
+* **The Spirit:** MODINE IDEAL identifies "New & Unusual Service-to-Service" connections. By tracking the **Process Lineage** (e.g., `services.exe` spawning an unexpected child process), we detect the exploit at the moment of execution, even if the malware hash is unknown.
+
+### 2. Admin-Safe Intelligence (Zero-Interruption Policy)
+* **The Problem:** Many systems block everything when they see "Admin-like" movement, causing downtime.
+* **Our Mechanism:** We use **Context-Aware Whitelisting**. The system distinguishes between:
+    1.  **Legitimate Admin:** Actions coming from known **Azure Bastion** IPs or encrypted VPN tunnels with matching session IDs.
+    2.  **Impersonated Admin:** Actions that use Admin privileges but originate from an unusual source or at an abnormal time.
+* **The Spirit:** We monitor **"The Intent"** through behavioral logs. If an Admin account starts encrypting files or scanning ports, the system blocks the *process*, not the *Admin account*, ensuring business continuity.
+
+### 3. Detecting Zero-Day via "Abnormal Process Heritage"
+* **The Logic:** A Zero-Day exploit always needs to "escape" the compromised application (like a Browser or Document Reader).
+* **The Mechanism:** We monitor **Parent-Child Process relationships**. If `winword.exe` (Word) spawns `cmd.exe` or `powershell.exe`, it's a 99% indicator of an exploit. 
+* **The Spirit:** We don't care what the malware is called; we care **what it does**. By blocking the "Abnormal Birth" of a process, we neutralize Zero-Days before they can establish Persistence.
+
+---
+
 ## 🔍 Deep Dive: How the Code Proves Compliance
 The technical architecture of **MODINE IDEAL** is built to satisfy regulatory requirements directly through its configuration files.
 
@@ -70,11 +92,24 @@ The technical architecture of **MODINE IDEAL** is built to satisfy regulatory re
 * **The Code:** `ossec.conf` (Section: `<syscheck>`)
 * **How it works:** To protect Smart Factory assets, we use `<directories check_all="yes" realtime="yes">`. This ensures that any unauthorized modification to critical system binaries or Industrial IoT configurations is detected instantly, preventing **Zero-Day** tampering of production lines.
 
----
+## 📊 Visual Proof & Dashboards
+To validate the effectiveness of **MODINE IDEAL**, we monitor real-time metrics through a custom-hardened Wazuh Dashboard.
+
+### 🛡️ SCA Hardening Evolution
+We track the transformation of system security from a vulnerable state (SCA < 50%) to an enterprise-grade hardened state (SCA > 90%) using continuous auditing.
+![SCA Dashboard](sca_score.png)
+
+### 🌍 Advanced Geolocation Intelligence (Custom Implementation)
+While standard cloud setups offer basic logs, **MODINE IDEAL** features a custom-engineered **Geolocation Mapping Engine**. 
+
+* **The Engineering:** I have manually configured the **GeoIP pipelines** and integrated **Satellite-view layers** within the dashboard to provide pinpoint accuracy. 
+* **The Distinction:** This is not a default Azure/Wazuh feature; it is a custom-built visualization that allows SOC analysts to see the exact physical origin of attacks on a satellite map, enabling high-fidelity situational awareness before triggering the **Automated Counter-Attack**.
+![Advanced Satellite Attack Map](attack_map.png)
 
 ## 📂 Project Structure
-* `📂 configs/`: Production-ready `ossec.conf` optimized for Wazuh Managers.
+* `📂 configs/`: Production-ready `ossec.conf` optimized for Wazuh Managers (Azure-Native).
 * `📂 rules/`: Custom **MODINE-Ruleset** for high-risk threat detection (Zero-Day focus).
+* `📂 infrastructure/`: (Optional) Logic for Azure NSG integration and Cloud-Hardening.
 
 ---
 
