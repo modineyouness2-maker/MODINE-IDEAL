@@ -95,9 +95,13 @@ The technical architecture of **MODINE IDEAL** is built to satisfy regulatory re
 ## 📊 Visual Proof & Dashboards
 To validate the effectiveness of **MODINE IDEAL**, we monitor real-time metrics through a custom-hardened Wazuh Dashboard.
 
-### 🛡️ SCA Hardening Evolution
-We track the transformation of system security from a vulnerable state (SCA < 50%) to an enterprise-grade hardened state (SCA > 90%) using continuous auditing.
-![SCA Dashboard](sca_score.png)
+### 🛡️ Real-Time Vulnerability Lifecycle Management (The Hardening Proof)
+To ensure **Industrial Resilience**, MODINE IDEAL proactively identifies and tracks the lifecycle of system vulnerabilities.
+
+* **Continuous Scanning:** As demonstrated in the `MODINE-LAB` environment, our platform detected high-risk CVEs (2026 series) targeting critical system runtimes.
+* **From Vulnerable to Hardened:** The system confirms that identified threats are **Solved**. This transformation proves the platform's ability to move assets from a vulnerable state to a secured, enterprise-grade state.
+* **Proof of Compliance:** Detailed logging of CVE IDs, severity levels, and resolution status provides the necessary audit trail for **TISAX** and **ISO 27001** frameworks.
+![Vulnerability Proof](vulnerability_proof.png)
 
 ### 🌍 Advanced Geolocation Intelligence (Custom Implementation)
 While standard cloud setups offer basic logs, **MODINE IDEAL** features a custom-engineered **Geolocation Mapping Engine**. 
