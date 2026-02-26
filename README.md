@@ -24,10 +24,9 @@ MODINE IDEAL is not just a lab tool; it's a **Comprehensive Threat Intelligence 
 ![MODINE IDEAL Architecture](architecture.jpg)
 
 ### 🧩 Core Mechanisms:
-1. **Behavioral Heuristics (Rules 12-15):** Specialized in detecting **Zero-Day** and **Zero-Click** attacks (Lateral Movement).
+1. **Behavioral Heuristics (Rules 100101-100500):** Specialized in detecting **Unknown Vulnerabilities** and **No-Interaction** attacks.
 2. **Automated Counter-Attack:** Proprietary **Active Response** scripts that block malicious IPs and isolate compromised hosts instantly.
 3. **Admin-Safe Logic:** Intelligent context-aware whitelisting ensures that legitimate Administrative actions are never interrupted.
-
 ---
 
 ## 🏭 Industry 4.0 & Global Compliance
@@ -73,6 +72,75 @@ Detecting **Zero-Day** and **Zero-Click** attacks requires moving beyond signatu
 * **The Spirit:** We don't care what the malware is called; we care **what it does**. By blocking the "Abnormal Birth" of a process, we neutralize Zero-Days before they can establish Persistence.
 * **🛠️ Technical Implementation:** This relies on **Parent-Child Process monitoring** via `local_rules.xml` (using the `<parent_name>` and `<field>` tags). By creating a **"Deny-by-Default"** policy for child processes of vulnerable applications, we stop the exploit chain at the **Execution stage** of the MITRE ATT&CK framework.
   
+---
+
+## 🛡️ Technical Deep Dive: The Code Inside
+
+### 1. Detection Engine (`local_rules.xml`)
+We use a specialized ruleset to identify behavioral anomalies. Unlike traditional signature-based detection, these rules monitor **Lateral Movement Patterns** and **Abnormal Execution Heritage**.
+```xml
+<rule id="100002" level="15">
+  <if_sid>61600</if_sid>
+  <field name="win.eventdata.destinationIp">^10\.|^192\.168\.|^172\.</field>
+  <description>MODINE IDEAL: Lateral Movement Detected. Automated Counter-Measure Triggered!</description>
+  <mitre><id>T1021</id></mitre>
+</rule>
+
+<rule id="100101" level="15">
+  <if_sid>92213,510</if_sid>
+  <match>.exe|.sh|.py</match>
+  <description>MODINE IDEAL: Unknown execution or drop detected (Sysmon/FIM).</description>
+  <mitre><id>T1204</id></mitre>
+</rule>
+
+<rule id="100104" level="14">
+  <if_sid>550</if_sid>
+  <match>/etc/shadow|/etc/passwd|C:\Windows\System32\config\SAM</match>
+  <description>MODINE IDEAL [Zero-Day]: Critical System File Tampering (Credential Dumping Attempt).</description>
+  <mitre>
+    <id>T1485</id>
+    <id>T1003</id>
+  </mitre>
+</rule>
+
+```
+### 2.Active Defense & Hardening Architecture (`ossec.conf`)
+The Active Response module transforms **MODINE IDEAL** from a monitoring tool into a **Defensive Weapon**. When a high-level threat is detected, the system reacts in milliseconds to isolate the source.
+```xml
+<command>
+  <name>modine-firewall-attack</name>
+  <executable>firewall-drop</executable>
+  <expect>srcip</expect> 
+  <timeout_allowed>yes</timeout_allowed>
+</command>
+
+<active-response>
+  <command>modine-firewall-attack</command>
+  <location>all</location>
+  <rules_id>100101,100002,100104</rules_id>
+  <timeout>0</timeout> </active-response>
+
+<syscheck>
+  <directories check_all="yes" realtime="yes">/etc,/usr/bin,/usr/sbin</directories>
+  <directories check_all="yes" realtime="yes">/bin,/sbin,/boot</directories>
+  <alert_new_files>yes</alert_new_files>
+</syscheck>
+
+<sca>
+  <enabled>yes</enabled>
+  <scan_on_start>yes</scan_on_start>
+  <interval>12h</interval> </sca>
+
+<vulnerability-detector>
+  <enabled>yes</enabled>
+  <interval>5m</interval>
+  <run_on_start>yes</run_on_start>
+  <provider name="nvd">
+    <enabled>yes</enabled>
+  </provider>
+</vulnerability-detector>
+```
+
 ---
 
 ## 🔍 Deep Dive: How the Code Proves Compliance
