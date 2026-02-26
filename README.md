@@ -58,20 +58,21 @@ Detecting **Zero-Day** and **Zero-Click** attacks requires moving beyond signatu
 ### 1. The "Zero-Click" Detection Logic (East-West Movement)
 * **The Challenge:** Zero-Click attacks (like those targeting SMB or RPC) execute without any user interaction. They don't leave a "click" trail.
 * **Our Mechanism:** We monitor **Lateral Movement Patterns**. In a Zero-Click scenario, the attacker moves from one machine to another using legitimate system service accounts. 
-* **The Spirit:** MODINE IDEAL identifies "New & Unusual Service-to-Service" connections. By tracking the **Process Lineage** (e.g., `services.exe` spawning an unexpected child process), we detect the exploit at the moment of execution, even if the malware hash is unknown.
+* **The Spirit:** MODINE IDEAL identifies "New & Unusual Service-to-Service" connections. By tracking the **Process Lineage**, we detect the exploit at the moment of execution.
+* **🛠️ Technical Implementation:** This is achieved by correlating **Sysmon Event ID 3** (Network Connection) and **Event ID 1** (Process Creation) within `local_rules.xml`. Our logic flags any network-initiated process that doesn't match the baseline of industrial service accounts.
 
 ### 2. Admin-Safe Intelligence (Zero-Interruption Policy)
 * **The Problem:** Many systems block everything when they see "Admin-like" movement, causing downtime.
-* **Our Mechanism:** We use **Context-Aware Whitelisting**. The system distinguishes between:
-    1.  **Legitimate Admin:** Actions coming from known **Azure Bastion** IPs or encrypted VPN tunnels with matching session IDs.
-    2.  **Impersonated Admin:** Actions that use Admin privileges but originate from an unusual source or at an abnormal time.
-* **The Spirit:** We monitor **"The Intent"** through behavioral logs. If an Admin account starts encrypting files or scanning ports, the system blocks the *process*, not the *Admin account*, ensuring business continuity.
+* **Our Mechanism:** We use **Context-Aware Whitelisting**. The system distinguishes between Legitimate Admins and Impersonated Admins.
+* **The Spirit:** We monitor **"The Intent"** through behavioral logs. If an Admin account starts encrypting files, the system blocks the *process*, not the *account*.
+* **🛠️ Technical Implementation:** We utilize **Wazuh CDB Lists** (White-listing) and dynamic IP filtering in `ossec.conf`. By comparing the source IP against the known **Azure Bastion** range, the system dynamically decides whether to trigger an **Active Response** (Block) or just log the event for auditing.
 
 ### 3. Detecting Zero-Day via "Abnormal Process Heritage"
 * **The Logic:** A Zero-Day exploit always needs to "escape" the compromised application (like a Browser or Document Reader).
-* **The Mechanism:** We monitor **Parent-Child Process relationships**. If `winword.exe` (Word) spawns `cmd.exe` or `powershell.exe`, it's a 99% indicator of an exploit. 
+* **The Mechanism:** We monitor **Parent-Child Process relationships**. If `winword.exe` spawns `cmd.exe`, it's a 99% indicator of an exploit. 
 * **The Spirit:** We don't care what the malware is called; we care **what it does**. By blocking the "Abnormal Birth" of a process, we neutralize Zero-Days before they can establish Persistence.
-
+* **🛠️ Technical Implementation:** This relies on **Parent-Child Process monitoring** via `local_rules.xml` (using the `<parent_name>` and `<field>` tags). By creating a **"Deny-by-Default"** policy for child processes of vulnerable applications, we stop the exploit chain at the **Execution stage** of the MITRE ATT&CK framework.
+  
 ---
 
 ## 🔍 Deep Dive: How the Code Proves Compliance
